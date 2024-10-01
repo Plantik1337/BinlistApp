@@ -1,4 +1,4 @@
-package com.example.binlistapp.presentation
+package com.example.binlistapp.presentation.fragments
 
 import android.os.Bundle
 import android.util.Log
@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
 import androidx.fragment.app.Fragment
-import com.example.binlistapp.data.CardResponse
+import com.example.binlistapp.data.network.CardResponse
 import com.example.binlistapp.databinding.SearchFragmentBinding
+import com.example.binlistapp.presentation.viewmodels.SearchViewModel
 
 class SearchFragment : Fragment() {
     private val viewModel = SearchViewModel()

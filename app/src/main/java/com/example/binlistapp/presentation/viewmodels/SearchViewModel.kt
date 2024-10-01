@@ -1,11 +1,11 @@
-package com.example.binlistapp.presentation
+package com.example.binlistapp.presentation.viewmodels
 
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.binlistapp.data.RetrofitClient
-import com.example.binlistapp.data.CardResponse
+import com.example.binlistapp.data.network.RetrofitClient
+import com.example.binlistapp.data.network.CardResponse
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

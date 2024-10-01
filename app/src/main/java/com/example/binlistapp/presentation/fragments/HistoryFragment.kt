@@ -1,4 +1,4 @@
-package com.example.binlistapp.presentation
+package com.example.binlistapp.presentation.fragments
 
 import android.os.Bundle
 import android.view.View

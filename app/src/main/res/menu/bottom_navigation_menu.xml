@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/homeFragment"
+        android:id="@+id/searchFragment"
         android:title="Поиск"
         android:icon="@drawable/search_globe_svgrepo_com"/>
     <item
-        android:id="@+id/profileFragment"
+        android:id="@+id/historyFragment"
         android:title="История"
         android:icon="@drawable/open_book_book_svgrepo_com"/>
 </menu>
