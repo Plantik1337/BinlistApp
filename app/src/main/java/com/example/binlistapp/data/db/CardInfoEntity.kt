@@ -8,6 +8,7 @@ data class CardInfoEntity (
     @PrimaryKey(autoGenerate = true)
     val id: Int,
     val country: String,
+    val cardType: String,
     val locate: String,
     val bank: String,
     val bankUrl: String,

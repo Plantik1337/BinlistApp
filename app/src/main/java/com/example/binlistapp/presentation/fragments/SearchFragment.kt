@@ -10,9 +10,10 @@ import androidx.fragment.app.Fragment
 import com.example.binlistapp.data.network.CardResponse
 import com.example.binlistapp.databinding.SearchFragmentBinding
 import com.example.binlistapp.presentation.viewmodels.SearchViewModel
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SearchFragment : Fragment() {
-    private val viewModel = SearchViewModel()
+    private val viewModel by viewModel<SearchViewModel>()
     private lateinit var binding: SearchFragmentBinding
 
     override fun onCreateView(

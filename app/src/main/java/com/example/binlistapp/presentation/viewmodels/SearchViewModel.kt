@@ -27,16 +27,4 @@ class SearchViewModel: ViewModel() {
             }
         }
     }
-
-    //        lifecycleScope.launch {
-//            try {
-//                val binInfo = RetrofitClient.api.getCardInfo(binCode)
-//                Log.d("BIN_INFO", "Страна: ${binInfo.country?.name}, Банк: ${binInfo.bank?.name}")
-//                Log.d("BinWholeInfo", binInfo.country.latitude.toString())
-//            } catch (e: HttpException) {
-//                Log.e("BIN_INFO", "Ошибка HTTP: ${e.code()}")
-//            } catch (e: Exception) {
-//                Log.e("BIN_INFO", "Ошибка: ${e.message}")
-//            }
-//        }
 }

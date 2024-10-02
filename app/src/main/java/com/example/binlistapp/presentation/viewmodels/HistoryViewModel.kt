@@ -1,4 +1,7 @@
 package com.example.binlistapp.presentation.viewmodels
 
-class HistoryViewModel {
+import androidx.lifecycle.ViewModel
+
+class HistoryViewModel: ViewModel() {
+
 }
