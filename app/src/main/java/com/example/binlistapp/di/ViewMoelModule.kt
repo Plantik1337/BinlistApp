@@ -7,7 +7,7 @@ import org.koin.dsl.module
 
 val viewModelModule = module {
     viewModel {
-        SearchViewModel()
+        SearchViewModel(interactor = get())
     }
     viewModel {
         HistoryViewModel()

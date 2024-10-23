@@ -1,29 +1,28 @@
 package com.example.binlistapp.presentation.viewmodels
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.binlistapp.data.network.RetrofitClient
-import com.example.binlistapp.data.network.CardResponse
+import com.example.binlistapp.data.network.RequestState
+import com.example.binlistapp.domain.SearchInteractor
+import com.example.binlistapp.domain.SearchState
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class SearchViewModel: ViewModel() {
+class SearchViewModel(private val interactor: SearchInteractor) : ViewModel() {
 
-    var binML = MutableLiveData<CardResponse>()
-    fun binLiveData(): LiveData<CardResponse> = binML
+    private var binML = MutableLiveData<SearchState>()
+    fun binLiveData(): LiveData<SearchState> = binML
 
-    fun doRequest(cardBin: String){
-        CoroutineScope(Dispatchers.IO).launch{
-            try {
-                val binInfo = RetrofitClient.api.getCardInfo(cardBin)
-                binML.postValue(binInfo)
-                Log.d("BIN_INFO", "Страна: ${binInfo.country?.name}, Банк: ${binInfo.bank?.name}")
-                Log.d("BinWholeInfo", binInfo.country.latitude.toString())
-            } catch (e: Exception) {
-                Log.e("BIN_INFO", "Ошибка: ${e.message}")
+    fun doRequest(cardBin: String) {
+        CoroutineScope(Dispatchers.IO).launch {
+            binML.postValue(SearchState.Loading)
+
+            when (val request = interactor.doRequest(cardBin)) {
+                is RequestState.SuccessRequest -> binML.postValue(SearchState.Success(request.cardResponse))
+
+                is RequestState.Error -> binML.postValue(SearchState.Error(request.errorMessage))
             }
         }
     }
