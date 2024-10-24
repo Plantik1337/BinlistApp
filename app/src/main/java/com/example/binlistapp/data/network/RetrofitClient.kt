@@ -1,6 +1,5 @@
-package com.example.binlistapp
+package com.example.binlistapp.data.network
 
-import com.example.binlistapp.data.BinListApi
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 

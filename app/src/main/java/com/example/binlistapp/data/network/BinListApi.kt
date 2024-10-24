@@ -1,4 +1,4 @@
-package com.example.binlistapp.data
+package com.example.binlistapp.data.network
 
 import retrofit2.http.GET
 import retrofit2.http.Header

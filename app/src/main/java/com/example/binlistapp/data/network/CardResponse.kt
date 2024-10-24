@@ -1,4 +1,4 @@
-package com.example.binlistapp.data
+package com.example.binlistapp.data.network
 
 data class CardResponse(
     val number: NumberInfo,
