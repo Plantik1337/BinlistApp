@@ -2,6 +2,7 @@ package com.example.binlistapp.di
 
 import androidx.room.Room
 import com.example.binlistapp.data.Convertor
+import com.example.binlistapp.data.SearchRepository
 import com.example.binlistapp.data.SearchRepositoryImpl
 import com.example.binlistapp.data.db.AppDatabase
 import com.example.binlistapp.data.network.RetrofitClient
@@ -26,6 +27,13 @@ val dataModule = module {
         Room.databaseBuilder(
             androidContext(), AppDatabase::class.java, "database.db"
         ).fallbackToDestructiveMigration().build()
+    }
+    single<SearchRepository> {
+        SearchRepositoryImpl(
+            retrofit = get(),
+            appDatabase = get(),
+            convertor = get()
+        )
     }
 
 }

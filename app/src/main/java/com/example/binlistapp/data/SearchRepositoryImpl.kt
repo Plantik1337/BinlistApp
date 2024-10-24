@@ -20,6 +20,6 @@ class SearchRepositoryImpl(
     }
 
     override suspend fun writeToHistory(cardResponse: CardResponse, binCode: String) {
-        appDatabase.cardDao().insertCard(convertor.map(cardResponse, binCode))
+        //appDatabase.cardDao().insertCard(convertor.map(cardResponse, binCode))
     }
 }
